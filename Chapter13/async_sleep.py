@@ -1,9 +1,9 @@
 import asyncio
-import random
+import secrets
 
 
 async def random_sleep(counter):
-    delay = random.random() * 5
+    delay = secrets.SystemRandom().random() * 5
     print("{} sleeps for {:.2f} seconds".format(counter, delay))
     await asyncio.sleep(delay)
     print("{} awakens".format(counter))

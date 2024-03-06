@@ -11,9 +11,9 @@ implementation.
 """
 
 import csv
-from random import random
 import math
 from collections import Counter
+import secrets
 
 dataset_filename = "colors.csv"
 
@@ -27,7 +27,7 @@ def load_colors(filename):
 
 def generate_colors(count=100):
     for i in range(count):
-        yield (random(), random(), random())
+        yield (secrets.SystemRandom().random(), secrets.SystemRandom().random(), secrets.SystemRandom().random())
 
 
 def color_distance(color1, color2):

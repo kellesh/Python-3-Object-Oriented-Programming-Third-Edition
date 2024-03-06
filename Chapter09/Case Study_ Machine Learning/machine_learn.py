@@ -1,6 +1,6 @@
 import csv
-from random import randint
 from collections import Counter
+import secrets
 
 dataset_filename = "colors.csv"
 
@@ -19,7 +19,7 @@ def load_colors(filename):
 
 def generate_colors(count=100):
     for i in range(count):
-        yield (randint(0, 255), randint(0, 255), randint(0, 255))
+        yield (secrets.SystemRandom().randint(0, 255), secrets.SystemRandom().randint(0, 255), secrets.SystemRandom().randint(0, 255))
 
 
 def color_distance(color1, color2):

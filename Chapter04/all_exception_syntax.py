@@ -1,9 +1,9 @@
-import random
+import secrets
 
 some_exceptions = [ValueError, TypeError, IndexError, None]
 
 try:
-    choice = random.choice(some_exceptions)
+    choice = secrets.SystemRandom().choice(some_exceptions)
     print("raising {}".format(choice))
     if choice:
         raise choice("An error")
